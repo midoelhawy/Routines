@@ -27,7 +27,10 @@ fi
 
 echo "-----------------------------------------------------"
 echo "STEP #2/7 (make directories and set permissions)"
-mkdir -p /var/localhttp/$DOMAIN_NAME;
+if ! mkdir -p /var/localhttp/$DOMAIN_NAME; then
+echo "Web directory already Exist !"
+exit;
+fi
 chown -R www-data:www-data /var/localhttp/$DOMAIN_NAME;
 chmod -R 755 /var/localhttp/$DOMAIN_NAME;
 
