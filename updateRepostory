@@ -1,0 +1,7 @@
+cd /var/www/html
+git fetch --all && git reset --hard origin/step3
+composer dump-autoload
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear
+php artisan view:clear
